@@ -16,45 +16,25 @@ section h2{padding:20px; text-align:center;}
 div{display:flex; flex-direction:column; align-items:center; justify-content:flex-start; margin-top:20px;}
 table{border-collapse:collapse; width:80%;}
 table td, table th{border:1px solid #000; padding:10px; text-align:center;}
+button{margin-top:20px; padding:10px 20px; font-size:16px; cursor:pointer;}
 </style>
 </head>
 <body>
+
 <jsp:include page="header.jsp"></jsp:include>
 <jsp:include page="nav.jsp"></jsp:include>
 
 <section>
 <h2>영화 정보 현황</h2>
 <div>
-<table border="1" id="movieTable">
-<tr>
-    <th>영화 ID</th>
-    <th>제목</th>
-    <th>감독</th>
-    <th>개봉년도</th>
-</tr>
-<%
-    try{
-        String sql = "SELECT * FROM TBL_MOVIE_2025 ORDER BY movieId";
-        PreparedStatement pstmt = con.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
-        while(rs.next()){
-%>
-<tr>
-    <td><%=rs.getString("movieId") %></td>
-    <td><%=rs.getString("title") %></td>
-    <td><%=rs.getString("director") %></td>
-    <td><%=rs.getString("year") %></td>
-</tr>
-<%
-        }
-    }catch(Exception e){
-        e.printStackTrace();
-    }
-%>
-</table>
+
+
+<button onclick="location.href='moviesBooking.jsp'">예매 하기</button>
+<button onclick="location.href='bookingCheck.jsp'">예매 확인</button>
 </div>
 </section>
 
 <jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>

@@ -24,6 +24,7 @@ nav{
 		listMovies.jsp">영화 목록</a>
 		<a href="moviesBooking.jsp">예매</a>
 		<a href="bookingCheck.jsp">예매확인</a>
+		<a href="index.jsp">홈</a>
 	</nav>
 
 
